@@ -1,0 +1,19 @@
+/* line 1, ../sass/_core.sass */
+body {
+  background-color: #bca58a;
+  color: #44382a;
+}
+/* line 5, ../sass/_core.sass */
+body header {
+  background-color: #44382a;
+}
+
+/* line 8, ../sass/_core.sass */
+.tab {
+  margin-top: 3rem;
+}
+/* line 12, ../sass/_core.sass */
+.tab .action .btn {
+  margin-bottom: 1.6rem;
+  width: 100%;
+}

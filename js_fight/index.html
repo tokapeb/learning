@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GameDev Learn - JS fight</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js" integrity="sha256-xI/qyl9vpwWFOXz7+x/9WkG5j/SVnSw21viy8fWwbeE=" crossorigin="anonymous"></script>
+
+    <!-- jQuery UI CDN. -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <ul class="nav nav-pills">
+                <li role="presentation" class="active"><a href="#">Game</a></li>
+                <li id="new-character-tbn" role="presentation"><a href="#">Roll New Character</a></li>
+                <li role="presentation"><a href="#">Arena</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container main-container">
+            <div class="row">
+                <div class="col-sm-4 left-column player-tab tab text-center">
+
+                    <div class="attribute name highlighted">
+                        <label class="label">Name</label>
+                        <div class="value">Noname</div>
+                    </div>
+
+                    <div class="attribute str">
+                        <label class="label">Strength</label>
+                        <div class="value">0</div>
+                    </div>
+
+                    <div class="attribute dex">
+                        <label class="label">Dexterity</label>
+                        <div class="value">0</div>
+                    </div>
+
+                    <div class="attribute hp">
+                        <label class="label">Hit points</label>
+                        <div class="value">0</div>
+                    </div>
+
+                    <div class="attribute weapon">
+                        <label class="label">Weapon</label>
+                        <div class="value">None</div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 center-column actions-tab tab text-center">
+                    <div class="action normal">
+                        <a id="attack" class="btn btn-default" href="#">Attack</a>
+                    </div>
+
+                    <div class="action normal">
+                        <a id="flee" class="btn btn-default" href="#">Flee</a>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 right-column enemy-tab tab text-center">
+
+                    <div class="attribute name highlighted">
+                        <label class="label">Name</label>
+                        <div class="value">Noname</div>
+                    </div>
+
+                    <div class="attribute str">
+                        <label class="label">Strength</label>
+                        <div class="value">0</div>
+                    </div>
+
+                    <div class="attribute dex">
+                        <label class="label">Dexterity</label>
+                        <div class="value">0</div>
+                    </div>
+
+                    <div class="attribute hp">
+                        <label class="label">Hit points</label>
+                        <div class="value">0</div>
+                    </div>
+
+                    <div class="attribute weapon">
+                        <label class="label">Weapon</label>
+                        <div class="value">None</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modal"></div>
+        </div>
+    </main>
+
+    <script src="scripts/lfight.js"></script>
+    <script src="scripts/modals.js"></script>
+    <script src="scripts/enemies.js"></script>
+    <script src="scripts/core.js"></script>
+</body>
+</html>
