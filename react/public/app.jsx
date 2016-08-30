@@ -1,7 +1,7 @@
 var GreeterMessage = React.createClass({
   render: function () {
     var name = this.props.name;
-    var message = this.props.msg;
+    var message = this.props.message;
     return (
       <div>
         <h1>Hello {name}!</h1>
@@ -15,21 +15,30 @@ var GreeterForm = React.createClass({
   onFormSubmit: function(e) {
     e.preventDefault();
 
+    var updates = {};
     var name = this.refs.name.value;
+    var message = this.refs.message.value;
+
+    if (message.length > 0) {
+      this.refs.message.value = '';
+      updates.message = message;
+    }
 
     if (name.length > 0) {
       this.refs.name.value = '';
-      this.props.onNewName(name);
+      updates.name = name;
     }
+
+    this.props.onNewData(updates);
   },
   render: function() {
     return (
       <form onSubmit={this.onFormSubmit}>
         <input type="text" placeholder="Type Name" ref="name" />
         <br/>
-        <textarea placeholder="Type Message" />
+        <textarea placeholder="Type Message" ref="message"/>
         <br/>
-        <button>Set Name</button>
+        <button>Submit</button>
       </form>
     );
   }
@@ -39,27 +48,26 @@ var Greeter = React.createClass({
   getDefaultProps: function () {
     return {
       name: 'React',
-      msg: 'This is the Default message.'
+      message: 'This is the Default message.'
     }
   },
-  handleNewName: function(name) {
-    this.setState({
-      name: name
-    });
+  handleNewData: function(updates) {
+    this.setState(updates);
   },
   getInitialState: function () {
     return {
-      name: this.props.name
+      name: this.props.name,
+      message: this.props.message
     }
   },
   render: function () {
     var name = this.state.name;
-    var msg = this.props.msg;
+    var message = this.state.message;
     return (
       <div>
-        <GreeterMessage name={name} msg={msg}/>
+        <GreeterMessage name={name} message={message}/>
 
-        <GreeterForm onNewName={this.handleNewName}/>
+        <GreeterForm onNewData={this.handleNewData}/>
       </div>
     );
   }
@@ -67,9 +75,9 @@ var Greeter = React.createClass({
 });
 
 var name = "Kornel";
-var msg = "This is the dynamic message, yeah!";
+var message = "This is the dynamic message, yeah!";
 
 ReactDOM.render(
-  <Greeter name={name} msg={msg}/>,
+  <Greeter name={name} message={message}/>,
   document.getElementById('app')
 );
